@@ -1,0 +1,29 @@
+circle:hover {
+    fill: rgba(255, 148, 112, 1);
+  } 
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #nav_button {
+    text-align: center;
+  }
+  
+  #my_tooltip {
+    opacity: 0;
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute; 
+  }
+  
+  circle {
+    fill: lightblue;
+    stroke: black;
+    opacity: 0.5;
+    transition: r 0.3s ease;
+    
+  }

@@ -1,13 +1,23 @@
-<html lang="en">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Narrative Visualization</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-    </head>
-    <body>
-        <p>
-            "hello"
-        </p>
-    </body>
+<body onload='init()'>
+    <h1>2017 Car Data by Fuel Types</h1>
+    <div id ="nav_button">
+    <button onclick="createChart(data); allChartAnnotations()">All</button>
+    <button onclick="createChart(gasolineData); gasolineChartAnnotations()">Gasoline</button>
+    <button onclick="createChart(dieselData); dieselChartAnnotations()">Diesel</button>
+    <button onclick="createChart(electricData); electricChartAnnotations() ">Electricity</button>
+
+    </div>
+
+    <svg width=600 height=600>
+    </svg>
+    <script src="main.js"></script>
+</body>
+</html>

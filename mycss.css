@@ -1,6 +1,10 @@
 circle:hover {
-    fill: rgba(255, 148, 112, 1);
+    fill: rgb(40, 163, 61);
   } 
+  html {
+    font-family: "Courier New", monospace;
+    background-color: rgb(253, 254, 238);
+  }
   
   h1 {
     text-align: center;
@@ -8,6 +12,19 @@ circle:hover {
   
   #nav_button {
     text-align: center;
+  }
+  button {
+    background-color:rgb(210, 210, 210);
+  }
+  button:focus {     
+    background-color:rgb(40, 163, 61);    
+  }
+  button:hover{background-color:orange;}
+
+  svg {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
   }
   
   #my_tooltip {
@@ -21,7 +38,7 @@ circle:hover {
   }
   
   circle {
-    fill: lightblue;
+    fill: rgb(196, 241, 255);
     stroke: black;
     opacity: 0.5;
     transition: r 0.3s ease;

@@ -3,7 +3,21 @@ circle:hover {
   } 
   html {
     font-family: "Courier New", monospace;
-    background-color: rgb(253, 254, 238);
+    background-color: rgb(244, 229, 251);
+  }
+
+  #intro {
+    background-color:rgb(229, 249, 255);
+    border: solid;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  #annotation-intro {
+    padding-left: 2%;
+    padding-right: 2%;
+    font-weight: bold;
+    text-align: center;
   }
   
   h1 {
@@ -12,9 +26,10 @@ circle:hover {
   
   #nav_button {
     text-align: center;
+    padding-top: 2%;
   }
   button {
-    background-color:rgb(210, 210, 210);
+    background-color:rgb(233, 255, 249);
   }
   button:focus {     
     background-color:rgb(40, 163, 61);    

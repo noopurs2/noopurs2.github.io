@@ -1,5 +1,6 @@
 let data, gasolineData, dieselData, electricData, tooltip;
-
+const div = document.getElementById('annotation-intro');
+const p = document.createElement('p');
 
 async function init() {
  data = await d3.csv("https://flunky.github.io/cars2017.csv");
@@ -39,17 +40,21 @@ const yScale = d3.scaleLog([10, d3.max(data, d => +d.AverageHighwayMPG)],[height
   .tickValues([10, 20, 50, 100, 150])
   .tickFormat(d3.format("~s"));
 
-og.append("g").attr("transform", "translate(0,0)").call(yAxis).attr("text-anchor", "end").append("text")
+og.append("g").attr("transform", "translate(0,0)").call(yAxis).attr("text-anchor", "end")
+og.append("g").attr("transform", `translate(0, ${height})`).call(xAxis).attr("text-anchor", "end")
+og.append("text")
+    .attr("text-anchor", "middle")
+    .attr("x", width/2)
+    .attr("y",  height + margin.top)
+    .text("Average City MPG");
+    
+og.append("text")
+    .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin.left)
-    .attr("x", 0 - (height / 2 + margin.top))
-    .style("text-anchor", "middle")
-    .attr("fill", "#5D6971")
-    .text("Populadddtion");
-og.append("g").attr("transform", `translate(0, ${height})`).call(xAxis).attr("text-anchor", "end").append("text")
-     .attr("transform", `translate(${width / 2 + margin.left}, ${height + margin.top + 40})`)
-    .style("text-anchor", "middle")
-    .text("city");
+    .attr("x", -height/2)
+    .attr("y",  -40)
+    .text("Average Highway MPG");
+
 
 
     
@@ -60,7 +65,7 @@ og.append("g").attr("transform", `translate(0, ${height})`).call(xAxis).attr("te
   }
   var mousemove = function(d) {
     d3.select('#my_tooltip')
-      .html(`Average City MPG: ${d.AverageCityMPG}<br>Average Highway MPG: ${d.AverageHighwayMPG}<br>Make: ${d.Make}<br>Cylingers: ${d.EngineCylinders}`)
+      .html(`Average City MPG: ${d.AverageCityMPG}<br>Average Highway MPG: ${d.AverageHighwayMPG}<br>Make: ${d.Make}<br>Cylinders: ${d.EngineCylinders}`)
       .style("left", (d3.event.pageX+10) + 'px')
       .style("top", (d3.event.pageY+10) + 'px')
   }
@@ -81,6 +86,10 @@ og.append("g").attr("transform", `translate(0, ${height})`).call(xAxis).attr("te
 }
 
 function allChartAnnotations(){
+    p.style.color = 'black';
+    p.textContent = 'The below chart displays car data of three different fuel types: Gasoline, Diesel, and Electricity.';
+    div.appendChild(p);
+
   const annotations = [
     {
       note: {
@@ -111,6 +120,10 @@ function allChartAnnotations(){
 }
 
 function gasolineChartAnnotations(){
+
+    p.style.color = 'black';
+    p.textContent = 'The below chart displays all Gasoline cars. Based on this data, Gasoline cars less fuel efficient compared to electric and diesel cars with Average City MPG falling in the range of 10-39 and Average Highway MPG falling in the range of 16-42.';
+    div.appendChild(p);
   const annotations = [
     {
       note: {
@@ -143,6 +156,9 @@ function gasolineChartAnnotations(){
 }
 
 function dieselChartAnnotations(){
+    p.style.color = 'black';
+    p.textContent = 'The below chart displays car data for Diesel cars. Their Average City MPG falls in the range of 21-30 and Average Highway MPG in 28-41.';
+    div.appendChild(p);
   const annotations = [
     {
       note: {
@@ -175,6 +191,9 @@ function dieselChartAnnotations(){
 }
 
 function electricChartAnnotations(){
+    p.style.color = 'black';
+    p.textContent = 'Electric cars have better Average City MPG and Average Highway MPG with range of 85-150 and 82-122 respectively. They seem to be more fuel efficient compared to the Gasoline and Diesel cars.';
+    div.appendChild(p);
   const annotations = [
     {
       note: {

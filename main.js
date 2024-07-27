@@ -192,7 +192,7 @@ function dieselChartAnnotations(){
 
 function electricChartAnnotations(){
     p.style.color = 'black';
-    p.textContent = 'Electric cars have better Average City MPG and Average Highway MPG with range of 85-150 and 82-122 respectively. They seem to be more fuel efficient compared to the Gasoline and Diesel cars.';
+    p.textContent = 'Electric cars have better Average City MPG and Average Highway MPG with range of 85-150 and 82-122 respectively. Electric cars are more fuel efficient compared to the Gasoline and Diesel cars.';
     div.appendChild(p);
   const annotations = [
     {

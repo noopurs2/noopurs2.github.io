@@ -45,7 +45,7 @@ og.append("g").attr("transform", `translate(0, ${height})`).call(xAxis).attr("te
 og.append("text")
     .attr("text-anchor", "middle")
     .attr("x", width/2)
-    .attr("y",  height + margin.top)
+    .attr("y",  height + 35)
     .text("Average City MPG");
     
 og.append("text")
@@ -87,13 +87,13 @@ og.append("text")
 
 function allChartAnnotations(){
     p.style.color = 'black';
-    p.textContent = 'The below chart displays car data of three different fuel types: Gasoline, Diesel and Electricity.';
+    p.textContent = 'The below chart displays car data for three different fuel types: Gasoline, Diesel and Electricity.';
     div.appendChild(p);
 
   const annotations = [
     {
       note: {
-        label: "The electric cars are outliers they have higher average city and highway MPG.",
+        label: "The electric cars are outliers, they have higher average city and highway MPG.",
         title: "Electric Cars"
       },
       type: d3.annotationCalloutCircle,
@@ -122,7 +122,7 @@ function allChartAnnotations(){
 function gasolineChartAnnotations(){
 
     p.style.color = 'black';
-    p.textContent = 'The below chart displays all Gasoline cars. Based on this data, Gasoline cars less fuel efficient compared to electric and diesel cars with Average City MPG falling in the range of 10-39 and Average Highway MPG falling in the range of 16-42.';
+    p.textContent = 'The below chart displays all Gasoline cars. Based on this data, Gasoline cars are less fuel efficient compared to Electric and Diesel cars with Average City MPG falling in the range of 10-39 and Average Highway MPG falling in the range of 16-42.';
     div.appendChild(p);
   const annotations = [
     {
@@ -162,7 +162,7 @@ function dieselChartAnnotations(){
   const annotations = [
     {
       note: {
-        label: "Chevrolet and GMC have the same city and highway MPG ",
+        label: "Chevrolet and GMC have the same Average City and Highway MPG ",
         bgPadding: 20,
         lineHeight: 0.2,
         title: "Cars with similar Fuel Efficiency"
@@ -192,12 +192,12 @@ function dieselChartAnnotations(){
 
 function electricChartAnnotations(){
     p.style.color = 'black';
-    p.textContent = 'Electric cars have better Average City MPG and Average Highway MPG with range of 85-150 and 82-122 respectively. Electric cars are more fuel efficient compared to the Gasoline and Diesel cars.';
+    p.textContent = 'Electric cars have higher Average City MPG and Average Highway MPG with range of 85-150 and 82-122 respectively. Electric cars are more fuel efficient compared to the Gasoline and Diesel cars.';
     div.appendChild(p);
   const annotations = [
     {
       note: {
-        label: "Hyundai has the highest city and highway MPG ",
+        label: "Hyundai has the highest Average City and Highway MPG ",
         bgPadding: 20,
         lineHeight: 0.2,
         title: "Most Fuel Efficient Car"

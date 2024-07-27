@@ -87,7 +87,7 @@ og.append("text")
 
 function allChartAnnotations(){
     p.style.color = 'black';
-    p.textContent = 'The below chart displays car data of three different fuel types: Gasoline, Diesel, and Electricity.';
+    p.textContent = 'The below chart displays car data of three different fuel types: Gasoline, Diesel.';
     div.appendChild(p);
 
   const annotations = [
